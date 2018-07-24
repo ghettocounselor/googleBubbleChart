@@ -3,6 +3,8 @@
 # data <- readRDS("/Users/markloessi/Data/shinny/googlebubble71820/healthexp.Rds")
 # data <- readRDS("healthexpcsv.Rds")
 # data <- readRDS("healthexp.Rds")
+# need rio for convert function
+library(rio)
 convert("healthexpxlsx.xlsx", "healthexpxlsx.Rds")
 
 data <- readRDS("healthexpxlsx.Rds")
