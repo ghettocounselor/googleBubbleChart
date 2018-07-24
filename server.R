@@ -21,8 +21,8 @@ shinyServer(function(input, output, session) {
     # HOVERCARD is defined by the 1st 4 options in the list
     df <- data %>%
       filter(Year == input$year) %>%
-      select(Country, Health.Expenditure, Life.Expectancy, 
-             Region, Population, Percent.ExpChange, Unit.ExpChange  ) %>%
+      select(Country, Percent.ExpChange, Unit.ExpChange, 
+             Region, Population,  Health.Expenditure, Life.Expectancy  ) %>%
       arrange(Region)
   })
   

@@ -7,12 +7,12 @@ library(googleCharts)
 # Use global max/min for axes so the view window stays
 # constant as the user moves between years
 xlim <- list(
-  min = min(data$Unit.ExpChange) - 50,   # Health.Expenditure
-  max = max(data$Unit.ExpChange) + 100    # Health.Expenditure
+  min = min(data$Percent.ExpChange) - 10,   # Health.Expenditure
+  max = max(data$Percent.ExpChange) + 10    # Health.Expenditure
 )
 ylim <- list(
-  min = min(data$Life.Expectancy),      # Life.Expectancy
-  max = max(data$Life.Expectancy) + 3  # Life.Expectancy
+  min = min(data$Unit.ExpChange),      # Life.Expectancy
+  max = max(data$Unit.ExpChange) + 3  # Life.Expectancy
 )
 
 shinyUI(fluidPage(
@@ -41,11 +41,11 @@ shinyUI(fluidPage(
                       fontSize = 13,
                       # Set axis labels and ranges
                       hAxis = list(
-                        title = "Unit.ExpChange",    # "Health expenditure, per capita ($USD)"
+                        title = "Percent.ExpChange",    # "Health expenditure, per capita ($USD)"
                         viewWindow = xlim
                       ),
                       vAxis = list(
-                        title = "Life expectancy (years)",      # "Life expectancy (years)"
+                        title = "Unit.ExpChange",      # "Life expectancy (years)"
                         viewWindow = ylim
                       ),
                       # The default padding is a little too spaced out
