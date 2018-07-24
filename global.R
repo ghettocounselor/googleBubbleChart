@@ -1,4 +1,6 @@
 # July 23rd created GitHub repository
+# also published to markloessi.shinyapps.io @ https://markloessi.shinyapps.io/gitHub_GoogleBubbleChart/
+
 # data <- readRDS("~/Data/shinny/googlebubble71820/healthexp.Rds")
 # data <- readRDS("/Users/markloessi/Data/shinny/googlebubble71820/healthexp.Rds")
 # data <- readRDS("healthexpcsv.Rds")
