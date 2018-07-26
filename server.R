@@ -1,4 +1,4 @@
-setwd("~/Data/shinny/gitHub_GoogleBubbleChart")
+# setwd("~/Data/shinny/gitHub_GoogleBubbleChart")
 library(dplyr)
 
 shinyServer(function(input, output, session) {
