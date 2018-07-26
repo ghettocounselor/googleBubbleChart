@@ -31,7 +31,7 @@ shinyUI(fluidPage(
   h2("Google Charts demo"),
   
   googleBubbleChart("chart",
-                    width="100%", height = "475px",
+                    width="100%", height = "475px",        # height = "475px"
                     # Set the default options for this chart; they can be
                     # overridden in server.R on a per-update basis. See
                     # https://developers.google.com/chart/interactive/docs/gallery/bubblechart
@@ -42,25 +42,42 @@ shinyUI(fluidPage(
                       # Set axis labels and ranges
                       hAxis = list(
                         title = "Percent.ExpChange",    # "Health expenditure, per capita ($USD)"
+                        format = "Percent",             # format number as a percentage :)
+                        # color = "green",
+                        # count = "4",
+                        # legendPosition = "in",
+                        # titlePosition = "in", axisTitlesPosition = "in",
+                        # textposition = "in",
                         viewWindow = xlim
                       ),
                       vAxis = list(
                         title = "Unit.ExpChange",      # "Life expectancy (years)"
+                        format = "Currency",           # format number as a $ :)
+                        # legendPosition = "in",
+                        # titlePosition = "in", 
+                        # textposition = "in",
+                        # ticks = "500,1000,1500,2000"     # would allow you to denote the lines at certain values
                         viewWindow = ylim
                       ),
                       # The default padding is a little too spaced out
                       chartArea = list(
                         top = 50, left = 75,
-                        height = "75%", width = "75%"
+                        height = "75%", width = "75%"  # wierd the way this works
                       ),
                       # Allow pan/zoom
                       explorer = list(),
                       # Set bubble visual props
                       bubble = list(
                         opacity = 0.4, stroke = "none",
-                        # Hide bubble label
+                        # Hide bubble label by having color of "none"
+                        # code takes first column of data and uses as bubble title
                         textStyle = list(
-                          color = "none"
+                          fontSize = 12,
+                          fontName = "Times-Roman",
+                          color = "none",      # interesting idea if we can get bubble sizes worked out
+                          bold = "true",
+                          italic = "true",
+                          auracolor = "none"   # whether there is padding around the bubble title or not
                         )
                       ),
                       # Set fonts
