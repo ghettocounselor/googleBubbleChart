@@ -3,10 +3,6 @@ library(dplyr)
 
 shinyServer(function(input, output, session) {
   
- # output$choose_region <- renderUI({
-  #  selectInput("data", "Region", as.list(data$Region))
-  #})
-  
   # Provide explicit colors for regions, so they don't get recoded when the
   # different series happen to be ordered differently from year to year.
   # http://andrewgelman.com/2014/09/11/mysterious-shiny-things/
@@ -16,6 +12,10 @@ shinyServer(function(input, output, session) {
     names = levels(data$Region)
     # I'd really like to work out how to make this an input into the display, as in choose a region and have the graph be impacted. 
   )
+  # region selector
+  output$choose_region <- renderUI(
+    selectInput("data", "Region", choices = data.Regions, selected = NULL, multiple = TRUE
+  ))
   
   yearData <- reactive({
     # Filter to the desired year, and put the columns

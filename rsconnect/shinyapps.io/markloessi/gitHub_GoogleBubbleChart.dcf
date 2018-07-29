@@ -5,8 +5,8 @@ account: markloessi
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 386982
-bundleId: 1500915
+bundleId: 1505432
 url: https://markloessi.shinyapps.io/gitHub_GoogleBubbleChart/
-when: 1532571298.53651
+when: 1532824913.56138
 asMultiple: FALSE
 asStatic: FALSE

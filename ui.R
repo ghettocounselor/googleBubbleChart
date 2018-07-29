@@ -91,6 +91,12 @@ shinyUI(fluidPage(
                       )
                     )
   ),
+  fluidRow( 
+    shiny::column(4, offset = 2,
+    # This outputs the dynamic UI component
+    uiOutput("choose_region")
+    )
+  ),
   fluidRow(
     shiny::column(4, offset = 4,
                   sliderInput("year", "Year",
