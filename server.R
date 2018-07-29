@@ -14,8 +14,11 @@ shinyServer(function(input, output, session) {
   )
   # region selector
   output$choose_region <- renderUI(
-    selectInput("data", "Region", choices = data.Regions, selected = NULL, multiple = TRUE
-  ))
+    selectInput("data", "Region", choices = data.Regions, selected = NULL, multiple = TRUE)
+    )
+  # like this idea but not sure how to use it - basically if nothing selected, as is the begining state then use all fields for chart
+  if (is.null("choose_region"))
+    return(data.Regions)
   
   yearData <- reactive({
     # Filter to the desired year, and put the columns
@@ -40,6 +43,12 @@ shinyServer(function(input, output, session) {
           "TITLE OF PLAYGROUND GRAPH",
           input$year),
         series = series
+# stuff from UI
+# fluidRow(
+#   shiny::column(4, offset = 4,
+#                 sliderInput("year", "Year",
+#                             min = min(data$Year), max = max(data$Year),
+#                             value = min(data$Year), animate = TRUE)
       )
     )
   })
