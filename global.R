@@ -13,6 +13,7 @@ data <- readRDS("healthexpxlsx.Rds")
 # head(data)
 # data$Region <- factor(data$Region) # less specific
 data$Region <- as.factor(data$Region)
+# data for region selector
 data.Regions <- as.list(unique(data$Region))
 
 # if you edit the XLXS then use this to convert file to RDS
